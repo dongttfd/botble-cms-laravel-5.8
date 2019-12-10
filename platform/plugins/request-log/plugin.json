@@ -1,0 +1,9 @@
+{
+    "name": "Request Log",
+    "namespace": "Botble\\RequestLog\\",
+    "provider": "Botble\\RequestLog\\Providers\\RequestLogServiceProvider",
+    "author": "Sang Nguyen",
+    "url": "https://sangnguyen.info",
+    "version": "3.0",
+    "description": "Log error requests"
+}

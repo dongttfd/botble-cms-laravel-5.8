@@ -1,0 +1,26 @@
+{
+  "name": "botble/optimize",
+  "description": "Optimize page speed package for Botble CMS application",
+  "type": "package",
+  "autoload": {
+    "psr-4": {
+      "Botble\\Optimize\\": "src"
+    }
+  },
+  "authors": [
+    {
+      "name": "Sang Nguyen",
+      "email": "sangnguyenplus@gmail.com"
+    }
+  ],
+  "require": {
+    "silber/page-cache": "^1.0"
+  },
+  "extra":{
+    "laravel":{
+      "providers":[
+        "Botble\\Optimize\\Providers\\OptimizeServiceProvider"
+      ]
+    }
+  }
+}

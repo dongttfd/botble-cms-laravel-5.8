@@ -1,0 +1,9 @@
+{
+  "name": "Captcha",
+  "namespace": "Botble\\Captcha\\",
+  "provider": "Botble\\Captcha\\Providers\\CaptchaServiceProvider",
+  "author": "Sang Nguyen",
+  "url": "https://sangnguyen.info",
+  "version": "2.6",
+  "description": "Captcha for higher security"
+}

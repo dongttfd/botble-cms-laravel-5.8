@@ -1,0 +1,9 @@
+{
+    "name": "Custom Fields",
+    "namespace": "Botble\\CustomField\\",
+    "provider": "Botble\\CustomField\\Providers\\CustomFieldServiceProvider",
+    "author": "Sang Nguyen",
+    "url": "https://sangnguyen.info",
+    "version": "2.7",
+    "description": "Custom Fields"
+}

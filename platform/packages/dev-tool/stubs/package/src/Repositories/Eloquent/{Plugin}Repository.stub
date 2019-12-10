@@ -1,0 +1,14 @@
+<?php
+
+namespace Botble\{Plugin}\Repositories\Eloquent;
+
+use Botble\Support\Repositories\Eloquent\RepositoriesAbstract;
+use Botble\{Plugin}\Repositories\Interfaces\{Plugin}Interface;
+
+class {Plugin}Repository extends RepositoriesAbstract implements {Plugin}Interface
+{
+    /**
+     * @var string
+     */
+    protected $screen = {PLUGIN}_MODULE_SCREEN_NAME;
+}

@@ -1,0 +1,7 @@
+<?php
+
+return [
+    'name' => '{Plugin}',
+    'create' => 'New {plugin}',
+    'edit' => 'Edit {plugin}',
+];

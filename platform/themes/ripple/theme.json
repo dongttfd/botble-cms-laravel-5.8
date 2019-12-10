@@ -1,0 +1,14 @@
+{
+    "name": "Ripple",
+    "description": "Ripple is default theme for Botble since v2.0",
+    "author": "Sang Nguyen",
+    "version": "1.5",
+    "required_plugins": [
+        "blog",
+        "contact",
+        "gallery",
+        "language",
+        "block",
+        "member"
+    ]
+}

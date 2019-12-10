@@ -1,0 +1,33 @@
+<?php
+
+return [
+    'translations' => 'Translations',
+    'translations_description' => 'Translate all words in system.',
+    'export_warning' => 'Warning, translations are not visible until they are exported back to the app/lang file, using \'php artisan translation:export\' command or publish button.',
+    'import_done' => 'Done importing, processed <strong class="counter">N</strong> items! Reload this page to refresh the groups!',
+    'translation_manager' => 'Translations Manager',
+    'done_searching' => 'Done searching for translations, found <strong class="counter">N</strong> items!',
+    'done_publishing' => 'Done publishing the translations for group',
+    'append_translation' => 'Append new translations',
+    'replace_translation' => 'Replace existing translations',
+    'loading' => 'Loading...',
+    'import_group' => 'Import group',
+    'confirm_scan_translation' => 'Are you sure you want to scan you app folder? All found translation keys will be added to the database.',
+    'searching' => 'Searching...',
+    'find_translation_files' => 'Find translations in files',
+    'confirm_publish_group' => 'Are you sure you want to publish the translations group ":group"? This will overwrite existing language files.',
+    'publishing' => 'Publishing..',
+    'publish_translations'=> 'Publish translations',
+    'back' => 'Back',
+    'add_key_description' => 'Add 1 key per line, without the group prefix',
+    'add_key_button' => 'Add keys',
+    'total' => 'Total',
+    'changed' => 'changed',
+    'key' => 'Key',
+    'edit_title' => 'Enter translation',
+    'confirm_delete_key' => 'Are you sure you want to delete the translations for :key ?',
+    'choose_group_msg' => 'Choose a group to display the group translations. If no groups are visible, make sure you have run the migrations and imported the translations.',
+    'choose_a_group' => 'Choose a group',
+
+    'menu_name' => 'Translations',
+];

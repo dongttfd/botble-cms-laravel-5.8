@@ -1,0 +1,9 @@
+{
+    "name": "Audit Log",
+    "namespace": "Botble\\AuditLog\\",
+    "provider": "Botble\\AuditLog\\Providers\\AuditLogServiceProvider",
+    "author": "Sang Nguyen",
+    "url": "https://sangnguyen.info",
+    "version": "2.7",
+    "description": "Record activities logs"
+}

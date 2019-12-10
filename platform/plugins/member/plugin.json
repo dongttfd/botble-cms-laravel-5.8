@@ -1,0 +1,9 @@
+{
+  "name": "Member",
+  "namespace": "Botble\\Member\\",
+  "provider": "Botble\\Member\\Providers\\MemberServiceProvider",
+  "author": "Sang Nguyen",
+  "url": "https://sangnguyen.info",
+  "version": "2.8",
+  "description": "Manage member, user register/login"
+}

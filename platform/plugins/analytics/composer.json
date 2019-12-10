@@ -1,0 +1,15 @@
+{
+  "name": "botble/analytics",
+  "description": "Google analytics plugin",
+  "homepage": "https://botble.com",
+  "authors": [
+    {
+      "name": "Sang Nguyen",
+      "email": "minhsang2603@gmail.com",
+      "homepage": "https://sangnguyen.info"
+    }
+  ],
+  "require": {
+    "google/apiclient": "^2.2"
+  }
+}

@@ -1,0 +1,9 @@
+{
+    "name": "Gallery",
+    "namespace": "Botble\\Gallery\\",
+    "provider": "Botble\\Gallery\\Providers\\GalleryServiceProvider",
+    "author": "Sang Nguyen",
+    "url": "https://sangnguyen.info",
+    "version": "3.4",
+    "description": "Create or easy to add gallery images to posts, pages..."
+}

@@ -1,0 +1,14 @@
+{
+  "name": "NewsTV",
+  "description": "A magazine theme",
+  "author": "Sang Nguyen",
+  "version": "1.3",
+  "required_plugins": [
+    "blog",
+    "contact",
+    "gallery",
+    "language",
+    "block",
+    "member"
+  ]
+}

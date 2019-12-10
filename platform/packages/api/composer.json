@@ -1,0 +1,28 @@
+{
+  "name": "botble/api",
+  "description": "API package for Botble CMS application",
+  "type": "package",
+  "autoload": {
+    "psr-4": {
+      "Botble\\Api\\": "src"
+    }
+  },
+  "authors": [
+    {
+      "name": "Sang Nguyen",
+      "email": "sangnguyenplus@gmail.com"
+    }
+  ],
+  "require": {
+    "laravel/passport": "^7.0",
+    "mpociot/laravel-apidoc-generator": "^3.0",
+    "barryvdh/laravel-cors": "^0.11.3"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Botble\\Api\\Providers\\ApiServiceProvider"
+      ]
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+    "name": "{Plugin}",
+    "namespace": "Botble\\{Plugin}\\",
+    "provider": "Botble\\{Plugin}\\Providers\\{Plugin}ServiceProvider",
+    "author": "Sang Nguyen",
+    "url": "https://sangnguyen.info",
+    "version": "1.0",
+    "description": "The description for plugin {plugin}"
+}

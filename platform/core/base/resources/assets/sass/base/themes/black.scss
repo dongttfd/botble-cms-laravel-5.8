@@ -1,0 +1,495 @@
+// Defaults from layout.less
+$primary-text : rgba(255, 255, 255, 0.8);
+$primary-background : #2d3a42;
+$hover-text : #2d3a42;
+$hover-background : #ffffff;
+$hover-border-left : transparent;
+$active-text : #2d3a42;
+$active-background : #ffffff;
+// Replicate the effect caused by layout.less
+$child-background-multiply : rgba(0, 0, 0, 0.15);
+$child-primary-text : $primary-text;
+$child-primary-background : multiply($primary-background, $child-background-multiply);
+$child-hover-text : $hover-text;
+$child-hover-background : multiply($hover-background, $child-background-multiply);
+$child-active-background : $active-background;
+$primary-background : #000000;
+$hover-text : #ffffff;
+$hover-background : #da0523;
+$active-text : $hover-text;
+$active-background : $hover-background;
+$info-background : #00c6ff;
+$info-hover-background : #00addf;
+$child-primary-background : $primary-background;
+$child-hover-background : $primary-background;
+$general-img-path : '/vendor/core/images/';
+$general-font-path : '/vendor/core/fonts/';
+
+.pace {
+    .pace-progress {
+        background-color : $hover-background;
+    }
+}
+
+.logo {
+    display : none;
+}
+
+.navbar-inverse {
+    .navbar-nav {
+        .open {
+            .dropdown-menu {
+                & > li {
+                    & > a {
+                        &:hover {
+                            color : $hover-text;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.user-menu {
+    & > a {
+        background : url('#{$general-img-path}ui/nav_arrow_right.png') no-repeat 240px #2a2b31;
+    }
+}
+
+.navigation {
+    & > li {
+        border-top       : 1px solid #222222;
+        background-color : $primary-background;
+        &:hover {
+            & > a {
+                border-left      : 3px solid #43b1d6;
+                background-color : #2c3a42;
+            }
+        }
+    }
+}
+
+.navigation > li.active:focus > a, .navigation > li.active:hover > a, .navigation > li.active > a {
+    background-color : #43b1d6;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+    outline            : 0;
+    color              : #ffffff;
+    background-color   : $primary-background;
+    -webkit-box-shadow : 1px 0 0 $primary-background, -1px 0 0 $primary-background;
+    -moz-box-shadow    : 1px 0 0 $primary-background, -1px 0 0 $primary-background;
+    box-shadow         : 1px 0 0 $primary-background, -1px 0 0 $primary-background;
+}
+
+.panel-primary {
+    border-color : black;
+    & > .panel-heading {
+        background-color : black;
+    }
+}
+
+.panel-info {
+    border-color : $info-background;
+    & > .panel-heading {
+        background-color : $info-background;
+    }
+}
+
+.btn-info {
+    background-color : $info-background;
+    border-color     : $info-background;
+    &:hover {
+        background-color : $info-hover-background;
+        border-color     : $info-hover-background;
+    }
+}
+
+.bg-info, .bg-info a {
+    color            : #ffffff;
+    background-color : $info-background;
+}
+
+.btn-primary {
+    border-color : $primary-background;
+}
+
+body {
+    font-family : Roboto, sans-serif;
+}
+
+h1, .h1, h2, .h2, h3, .h3 {
+    font-family : Roboto, sans-serif;
+}
+
+h3, .h3 {
+    color : $primary-background;
+}
+
+body#login {
+    background-color : black;
+    .navbar {
+        display : none;
+    }
+}
+
+.login-wrapper {
+    left : 79%;
+    button {
+        background-color : $hover-background;
+        border-color     : $hover-background;
+        &:hover {
+            background-color : #ab0018;
+            border-color     : #ab0018;
+        }
+    }
+}
+
+@media (max-width : 767px) {
+    .login-wrapper {
+        left : 50%;
+    }
+}
+
+.btn-primary {
+    background-color : $primary-background;
+    &:hover {
+        background-color : #111111;
+    }
+}
+
+.btn-danger {
+    background-color : $hover-background;
+    border-color     : $hover-background;
+    &:hover {
+        background-color : #a90018;
+    }
+}
+
+.fc-next-button, .fc-prev-button {
+    background-color : $primary-background;
+}
+
+.fc-next-button:hover, .fc-prev-button:hover {
+    background-color : $hover-background;
+}
+
+.fc-state-down, .fc-state-active {
+    color            : $hover-text;
+    background-color : $hover-background;
+}
+
+.navbar-inverse {
+    background-color : $primary-background;
+}
+
+.navbar-brand {
+    background-color : $primary-background;
+}
+
+.navigation {
+    border-bottom : 1px solid #222222;
+}
+
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus, .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    background-color : $hover-background;
+}
+
+@media screen and (min-width : 1224px) {
+    .shortcuts_dashboard {
+        display : none;
+    }
+}
+
+/* Override the Login Box Styles*/
+.popup-header {
+    background-color : $primary-background;
+}
+
+/* Media Query*/
+@media (max-width : 767px) {
+    .navbar-brand {
+        background-repeat   : no-repeat;
+        background-position : left;
+        background-color    : $primary-background;
+    }
+}
+
+.logo {
+    display : none;
+}
+
+.sidebar {
+    background-color : $primary-background;
+}
+
+.user-menu {
+    & > a {
+        background : url('#{$general-img-path}ui/nav_arrow_right.png') no-repeat 240px #222222;
+    }
+}
+
+.navigation {
+    & > li {
+        border-top : 1px solid $primary-background;
+        &:hover {
+            & > a {
+                border-left      : 3px solid $hover-background;
+                background-color : $hover-background;
+                color            : $hover-text;
+                & > i {
+                    color : #ffffff;
+                }
+            }
+        }
+        &.active {
+            &:hover {
+                & > a {
+                    & > i {
+                        color : $primary-background;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.navigation > li.active:focus > a, .navigation > li.active:hover > a, .navigation > li.active > a {
+    background-color : $hover-background;
+    color            : $hover-text;
+    border-color     : $hover-background;
+}
+
+@media (max-width : 991px) {
+    .navbar-inverse .navbar-nav {
+        background-color : $primary-background;
+    }
+}
+
+@media (max-width : 479px) {
+    #table_data_collection_wrapper {
+        tbody {
+            tr {
+                td {
+                    &:nth-child(2) {
+                        display : none;
+                    }
+                    &:nth-child(3) {
+                        display : none;
+                    }
+                }
+            }
+        }
+    }
+    #table_data_collection_length {
+        display : none;
+    }
+    .label {
+        font-size  : 14px;
+        margin-top : 5px;
+    }
+    label {
+        display    : block;
+        margin-top : 5px;
+    }
+    .fc-toolbar {
+        .fc-left {
+            float : none;
+        }
+        .fc-center {
+            padding-top : 10px;
+        }
+        .fc-right {
+            float : none;
+        }
+    }
+    .fc {
+        button {
+            padding : 0 0.8em;
+        }
+    }
+    .panel-default {
+        & > .panel-heading {
+            padding-bottom : 5px;
+        }
+    }
+    .page-header {
+        small {
+            line-height : normal;
+        }
+    }
+
+}
+
+.header-buttons {
+    margin : 23px 0;
+}
+
+.navbar-inverse .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-inverse .navbar-nav .open .dropdown-menu > li > a:focus {
+    background-color   : $primary-background;
+    -webkit-box-shadow : 1px 0 0 $primary-background, -1px 0 0 $primary-background;
+    -moz-box-shadow    : 1px 0 0 $primary-background, -1px 0 0 $primary-background;
+    box-shadow         : 1px 0 0 $primary-background, -1px 0 0 $primary-background;
+}
+
+.nav-list {
+    & > li {
+        &.nav-header {
+            background-color : $primary-background;
+        }
+    }
+}
+
+.navbar-inverse {
+    .navbar-nav {
+        & > li {
+            & > a {
+                & > .label {
+                    background-color : $hover-background;
+                }
+            }
+        }
+    }
+}
+
+.crossfit_footer_logo {
+    span {
+        display             : block;
+        background-position : top center;
+        background-repeat   : no-repeat;
+        height              : 55px;
+        margin-top          : 15px;
+    }
+}
+
+.sidebar-narrow {
+    li {
+        &.crossfit_footer_logo {
+            display : none;
+        }
+    }
+    .navigation {
+        & > li {
+            & > ul {
+                background-color : $primary-background;
+            }
+        }
+    }
+}
+
+.panel-primary {
+    & > .panel-heading {
+        background-color : $primary-background;
+        border-bottom    : 0 none;
+        color            : #ffffff;
+    }
+}
+
+.shortcuts_dashboard {
+    display : block;
+}
+
+.bg-primary, .bg-primary a {
+    background-color : $primary-background;
+    color            : #ffffff;
+}
+
+.bg-danger, .bg-danger a {
+    background-color : $hover-background;
+    color            : $hover-text;
+}
+
+.info-blocks {
+    text-align : left;
+}
+
+.bg-default, .bg-default a {
+    background-color : #e8e8e8;
+    color            : #6b6b6b;
+}
+
+/* ipad ladscape view */
+@media only screen and (min-width : 768px) and (max-width : 1070px) {
+    .page-header {
+        small {
+            color : white;
+        }
+    }
+    .sidebar-narrow {
+        .sidebar {
+            display : none;
+        }
+        .page-content {
+            margin-left : 25px;
+        }
+    }
+    li {
+        &.language {
+            display : none;
+        }
+    }
+    .page-title {
+        h3 {
+            color : white;
+        }
+    }
+    .footer {
+        border-top : none;
+        color      : #ffffff;
+    }
+
+}
+
+/* Ipad landscape */
+@media (max-width : 767px) {
+    li {
+        &.language {
+            display : none;
+        }
+    }
+    .page-title {
+        h3 {
+            color : white;
+        }
+    }
+    .footer {
+        border-top : none;
+        color      : #ffffff;
+    }
+
+}
+
+/* Ipad portrait */
+@media only screen and (min-width : 768px) and (max-width : 1070px) {
+    .footer {
+        border-top : none;
+        color      : #ffffff;
+    }
+    .login-wrapper {
+        left : 50%;
+    }
+}
+
+/* Mobile view*/
+@media only screen and (min-width : 320px) and (max-width : 568px) {
+    .navbar-toggle {
+        margin : 12px 0 0 4px;
+    }
+    .page-header {
+        small {
+            color : white;
+        }
+    }
+    .footer {
+        border-top : none;
+        color      : #ffffff;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .page-header-top.navbar.navbar-inverse .top-menu .navbar-nav {
+        background-color: #303d44;
+    }
+}

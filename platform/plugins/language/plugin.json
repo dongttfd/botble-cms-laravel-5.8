@@ -1,0 +1,9 @@
+{
+    "name": "Language",
+    "namespace": "Botble\\Language\\",
+    "provider": "Botble\\Language\\Providers\\LanguageServiceProvider",
+    "author": "Sang Nguyen",
+    "url": "https://sangnguyen.info",
+    "version": "2.6",
+    "description": "Multilingual for Botble CMS"
+}

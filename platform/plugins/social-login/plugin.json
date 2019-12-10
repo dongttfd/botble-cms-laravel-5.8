@@ -1,0 +1,9 @@
+{
+    "name": "SocialLogin",
+    "namespace": "Botble\\SocialLogin\\",
+    "provider": "Botble\\SocialLogin\\Providers\\SocialLoginServiceProvider",
+    "author": "Sang Nguyen",
+    "url": "https://sangnguyen.info",
+    "version": "1.2",
+    "description": "Social login for Botble CMS"
+}

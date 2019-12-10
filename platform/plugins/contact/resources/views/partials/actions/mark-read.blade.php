@@ -1,0 +1,1 @@
+<i class="fa fa-eye-slash"></i> {{ trans('plugins/contact::contact.mark_as_read') }}

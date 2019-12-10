@@ -1,0 +1,203 @@
+$bg-color : #364150;
+
+.login {
+    background-color : $bg-color !important;
+    .content {
+        background-color : lighten(#eceef1, 10%);
+        width            : 450px;
+        margin           : 10% auto 0 auto;
+        overflow         : hidden;
+        position         : relative;
+        h3.form-title {
+            box-shadow    : inset 0px -3px 0px rgba(0, 0, 0, 0.2);
+            padding       : 20px 10px;
+            text-align    : center;
+            font-size     : 26px;
+            color         : #ffffff;
+            background    : #00c0ef;
+            border-radius : 0;
+            margin-bottom : 0;
+        }
+
+        .has-feedback label ~ .form-control-feedback {
+            line-height : 35px;
+        }
+
+        h4 {
+            color : #555555;
+        }
+
+        .hint {
+            color   : #999999;
+            padding : 0;
+            margin  : 15px 0 7px 0;
+        }
+
+        .content-wrapper {
+            padding : 30px;
+        }
+
+        .login-form,
+        .forget-form {
+            padding : 0;
+            margin  : 0;
+        }
+
+        .form-control {
+            background-color : #dde3ec;
+            height           : 43px;
+            color            : #8290a3;
+            border           : 1px solid #dde3ec;
+
+            &:focus,
+            &:active {
+                border : 1px solid #c3ccda;
+            }
+
+            &::-moz-placeholder {
+                color   : #8290a3;
+                opacity : 1; // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
+            }
+            &:-ms-input-placeholder {
+                color : #8290a3;
+            }
+            // Internet Explorer 10+
+            &::-webkit-input-placeholder {
+                color : #8290a3;
+            }
+        }
+
+        select.form-control {
+            padding-left  : 9px;
+            padding-right : 9px;
+        }
+
+        .form-title {
+            font-weight : 300;
+        }
+
+        .btn {
+            margin : 0;
+        }
+
+        .login-options {
+            margin-top : 30px;
+            overflow   : hidden;
+        }
+
+        .login-options > p {
+            float       : left;
+            font-weight : 600;
+            font-size   : 15px;
+            color       : #7d91aa !important;
+        }
+
+        .login-options .social-icons {
+            float       : right;
+            padding-top : 3px;
+        }
+
+        .login-options .social-icons li a {
+            border-radius         : 15px 15px 15px 15px !important;
+            -moz-border-radius    : 15px 15px 15px 15px !important;
+            -webkit-border-radius : 15px 15px 15px 15px !important;
+        }
+
+        .form-actions .checkbox {
+            margin-left  : 0;
+            padding-left : 0;
+        }
+
+        .forget-form .form-actions {
+            border         : 0;
+            margin-bottom  : 0;
+            padding-bottom : 20px;
+        }
+
+        .form-actions .btn {
+            margin-top : 1px;
+        }
+
+        .form-actions .btn {
+            font-weight : 600;
+            padding     : 10px 20px !important;
+        }
+
+        .form-actions .btn-default {
+            font-weight      : 600;
+            padding          : 10px 25px !important;
+            color            : #6c7a8d;
+            background-color : #ffffff;
+            border           : none;
+        }
+
+        .form-actions .btn-default:hover {
+            background-color : #fafaff;
+            color            : #45b6af;
+        }
+
+        .forget-password {
+            font-size  : 14px;
+            float      : right;
+            display    : inline-block;
+            margin-top : 10px;
+        }
+
+        .create-account {
+            margin           : 0 -40px -30px -40px;
+            padding          : 15px 0 17px 0;
+            text-align       : center;
+            background-color : #6c7a8d;
+
+            > p {
+                margin : 0;
+            }
+        }
+
+        .create-account p a {
+            font-weight : 600;
+            font-size   : 14px;
+            color       : #c3cedd;
+        }
+
+        .create-account a {
+            display    : inline-block;
+            margin-top : 5px;
+        }
+        .display-hide {
+            display : none;
+        }
+    }
+    .copyright {
+        text-align : center;
+        margin     : 0 auto 30px 0;
+        padding    : 10px;
+        color      : lighten($bg-color, 30%);
+        font-size  : 13px;
+    }
+}
+
+@media (max-width : 440px) {
+    .login {
+        .logo {
+            margin-top : 10px;
+        }
+        .content {
+            width      : 280px;
+            margin-top : 10px;
+            h3 {
+                font-size : 22px;
+            }
+        }
+        .forget-password {
+            display    : inline-block;
+            margin-top : 20px;
+        }
+        .login-options {
+            .social-icons {
+                float       : left;
+                padding-top : 3px;
+            }
+        }
+    }
+}

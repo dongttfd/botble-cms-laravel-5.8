@@ -1,0 +1,54 @@
+<?php
+
+namespace Botble\{Plugin}\Providers;
+
+use Botble\{Plugin}\Models\{Plugin};
+use Illuminate\Support\ServiceProvider;
+use Botble\{Plugin}\Repositories\Caches\{Plugin}CacheDecorator;
+use Botble\{Plugin}\Repositories\Eloquent\{Plugin}Repository;
+use Botble\{Plugin}\Repositories\Interfaces\{Plugin}Interface;
+use Botble\Base\Supports\Helper;
+use Event;
+use Botble\Base\Traits\LoadAndPublishDataTrait;
+use Illuminate\Routing\Events\RouteMatched;
+
+class {Plugin}ServiceProvider extends ServiceProvider
+{
+    use LoadAndPublishDataTrait;
+
+    /**
+     * @var \Illuminate\Foundation\Application
+     */
+    protected $app;
+
+    public function register()
+    {
+        $this->app->bind({Plugin}Interface::class, function () {
+            return new {Plugin}CacheDecorator(new {Plugin}Repository(new {Plugin}));
+        });
+
+        Helper::autoload(__DIR__ . '/../../helpers');
+    }
+
+    public function boot()
+    {
+        $this->setNamespace('{type}/{-plugin}')
+            ->loadAndPublishConfigurations(['permissions'])
+            ->loadMigrations()
+            ->loadAndPublishViews()
+            ->loadAndPublishTranslations()
+            ->loadRoutes(['web']);
+
+        Event::listen(RouteMatched::class, function () {
+            dashboard_menu()->registerItem([
+                'id'          => 'cms-plugins-{plugin}',
+                'priority'    => 5,
+                'parent_id'   => null,
+                'name'        => '{type}/{-plugin}::{-plugin}.name',
+                'icon'        => 'fa fa-list',
+                'url'         => route('{plugin}.list'),
+                'permissions' => ['{plugin}.list'],
+            ]);
+        });
+    }
+}

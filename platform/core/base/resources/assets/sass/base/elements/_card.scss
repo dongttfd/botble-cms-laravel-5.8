@@ -1,0 +1,154 @@
+// General mode
+
+.mt-element-card {
+
+    .mt-card-item {
+        position      : relative;
+        margin-bottom : 30px;
+
+        .mt-card-avatar {
+            margin-bottom : 15px;
+        }
+
+        .mt-card-content {
+            text-align : center;
+
+            .mt-card-name {
+                font-size     : 16px;
+                font-weight   : 600;
+                margin-bottom : 10px;
+            }
+
+            .mt-card-desc {
+                font-size : 14px;
+                margin    : 0 0 10px 0;
+            }
+
+            .mt-card-social {
+
+                > ul {
+                    padding       : 0;
+                    margin-bottom : 10px;
+
+                    > li {
+                        list-style : none;
+                        display    : inline-block;
+                        margin     : 0 3px;
+
+                        > a {
+                            color     : #000000;
+                            font-size : 18px;
+
+                            &.mt-card-btn {
+                                color : #ffffff;
+
+                                &:hover {
+                                    color : $brand-success;
+                                }
+                            }
+
+                            &:hover {
+                                color : $brand-warning;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.mt-card-round {
+
+        .mt-card-item {
+            padding : 40px 40px 10px 40px;
+
+            .mt-card-avatar {
+                border-radius      : 50% !important;
+                -webkit-mask-image : url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+
+                .mt-overlay {
+                    border-radius : 50% !important;
+                }
+            }
+        }
+    }
+
+}
+
+.mt-element-overlay {
+    .mt-overlay-1 {
+        width      : 100%;
+        height     : 100%;
+        float      : left;
+        overflow   : hidden;
+        position   : relative;
+        text-align : center;
+        cursor     : default;
+        .mt-info {
+            text-decoration   : none;
+            display           : inline-block;
+            text-transform    : uppercase;
+            color             : #ffffff;
+            background-color  : transparent;
+            opacity           : 0;
+            filter            : alpha(opacity=0);
+            transition        : all .2s ease-in-out;
+            padding           : 0;
+            margin            : auto;
+            position          : absolute;
+            top               : 50%;
+            left              : 0;
+            right             : 0;
+            transform         : translateY(-50%) translateZ(0);
+            -webkit-transform : translateY(-50%) translateZ(0);
+            -ms-transform     : translateY(-50%) translateZ(0);
+            > li {
+                list-style : none;
+                display    : inline-block;
+                margin     : 0 3px;
+            }
+        }
+        .mt-overlay {
+            width            : 100%;
+            height           : 100%;
+            position         : absolute;
+            z-index          : 2;
+            overflow         : hidden;
+            top              : 0;
+            left             : 0;
+            opacity          : 0;
+            background-color : rgba(0, 0, 0, 0.7);
+            transition       : all .4s ease-in-out;
+        }
+        img {
+            display    : block;
+            position   : relative;
+            transition : all .4s linear;
+            width      : 100%;
+            height     : auto;
+        }
+        &:hover {
+            img {
+                -webkit-transform : scale(1.2) translateZ(0);
+                transform         : scale(1.2) translateZ(0);
+            }
+            .mt-overlay {
+                opacity           : 1;
+                filter            : alpha(opacity=100);
+                -webkit-transform : translateZ(0);
+                transform         : translateZ(0);
+            }
+            .mt-info {
+                opacity          : 1;
+                filter           : alpha(opacity=100);
+                transition-delay : .2s;
+            }
+        }
+    }
+}
+
+.btn.btn-outline.default {
+    border-color : #e1e5ec;
+    color        : #e1e5ec;
+    background   : none;
+}

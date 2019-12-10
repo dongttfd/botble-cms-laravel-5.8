@@ -1,0 +1,29 @@
+.page-footer {
+    position   : absolute;
+    bottom     : 0;
+    left       : -18px;
+    right      : -15px;
+    padding    : 8px 20px 5px 20px;
+    font-size  : 13px;
+    min-height : $page-footer-height;
+    background : #ffffff;
+    color      : #bcc3c7;
+
+    .clearfix {
+        clear : both;
+    }
+
+    .page-footer-inner {
+        float   : left;
+        display : inline-block;
+        width   : 100%;
+        color   : #bcc3c7;
+    }
+}
+
+@media (min-width : $screen-md-min) { /* 992px */
+    /* Default footer */
+    .page-footer {
+        clear : left;
+    }
+}

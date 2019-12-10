@@ -1,0 +1,44 @@
+<?php
+
+namespace Botble\{Plugin}\Models;
+
+use Botble\Base\Traits\EnumCastable;
+use Botble\Base\Enums\BaseStatusEnum;
+use Eloquent;
+
+/**
+ * Botble\{Plugin}\Models\{Plugin}
+ *
+ * @mixin \Eloquent
+ */
+class {Plugin} extends Eloquent
+{
+    use EnumCastable;
+
+    /**
+     * The database table used by the model.
+     *
+     * @var string
+     */
+    protected $table = '{plugins}';
+
+    /**
+     * @var array
+     */
+    protected $fillable = [
+        'name',
+        'status',
+    ];
+
+    /**
+     * @var string
+     */
+    protected $screen = {PLUGIN}_MODULE_SCREEN_NAME;
+
+    /**
+     * @var array
+     */
+    protected $casts = [
+        'status' => BaseStatusEnum::class,
+    ];
+}

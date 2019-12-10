@@ -1,0 +1,11 @@
+<?php
+
+namespace Botble\{Plugin}\Repositories\Caches;
+
+use Botble\Support\Repositories\Caches\CacheAbstractDecorator;
+use Botble\{Plugin}\Repositories\Interfaces\{Plugin}Interface;
+
+class {Plugin}CacheDecorator extends CacheAbstractDecorator implements {Plugin}Interface
+{
+
+}

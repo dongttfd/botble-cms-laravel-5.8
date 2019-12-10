@@ -1,0 +1,162 @@
+<?php
+
+namespace Botble\{Plugin}\Http\Controllers;
+
+use Botble\Base\Events\BeforeEditContentEvent;
+use Botble\{Plugin}\Http\Requests\{Plugin}Request;
+use Botble\{Plugin}\Repositories\Interfaces\{Plugin}Interface;
+use Botble\Base\Http\Controllers\BaseController;
+use Illuminate\Http\Request;
+use Exception;
+use Botble\{Plugin}\Tables\{Plugin}Table;
+use Botble\Base\Events\CreatedContentEvent;
+use Botble\Base\Events\DeletedContentEvent;
+use Botble\Base\Events\UpdatedContentEvent;
+use Botble\Base\Http\Responses\BaseHttpResponse;
+use Botble\{Plugin}\Forms\{Plugin}Form;
+use Botble\Base\Forms\FormBuilder;
+
+class {Plugin}Controller extends BaseController
+{
+    /**
+     * @var {Plugin}Interface
+     */
+    protected ${+plugin}Repository;
+
+    /**
+     * {Plugin}Controller constructor.
+     * @param {Plugin}Interface ${+plugin}Repository
+     */
+    public function __construct({Plugin}Interface ${+plugin}Repository)
+    {
+        $this->{+plugin}Repository = ${+plugin}Repository;
+    }
+
+    /**
+     * Display all {plugins}
+     * @param {Plugin}Table $dataTable
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @throws \Throwable
+     */
+    public function getList({Plugin}Table $table)
+    {
+
+        page_title()->setTitle(trans('{type}/{-plugin}::{-plugin}.name'));
+
+        return $table->renderTable();
+    }
+
+    /**
+     * @param FormBuilder $formBuilder
+     * @return string
+     */
+    public function getCreate(FormBuilder $formBuilder)
+    {
+        page_title()->setTitle(trans('{type}/{-plugin}::{-plugin}.create'));
+
+        return $formBuilder->create({Plugin}Form::class)->renderForm();
+    }
+
+    /**
+     * Insert new {Plugin} into database
+     *
+     * @param {Plugin}Request $request
+     * @return BaseHttpResponse
+     */
+    public function postCreate({Plugin}Request $request, BaseHttpResponse $response)
+    {
+        ${plugin} = $this->{+plugin}Repository->createOrUpdate($request->input());
+
+        event(new CreatedContentEvent({PLUGIN}_MODULE_SCREEN_NAME, $request, ${plugin}));
+
+        return $response
+            ->setPreviousUrl(route('{plugin}.list'))
+            ->setNextUrl(route('{plugin}.edit', ${plugin}->id))
+            ->setMessage(trans('core/base::notices.create_success_message'));
+    }
+
+    /**
+     * Show edit form
+     *
+     * @param $id
+     * @param Request $request
+     * @param FormBuilder $formBuilder
+     * @return string
+     */
+    public function getEdit($id, FormBuilder $formBuilder, Request $request)
+    {
+        ${plugin} = $this->{+plugin}Repository->findOrFail($id);
+
+        event(new BeforeEditContentEvent({PLUGIN}_MODULE_SCREEN_NAME, $request, ${plugin}));
+
+        page_title()->setTitle(trans('{type}/{-plugin}::{-plugin}.edit') . ' "' . ${plugin}->name . '"');
+
+        return $formBuilder->create({Plugin}Form::class, ['model' => ${plugin}])->renderForm();
+    }
+
+    /**
+     * @param $id
+     * @param {Plugin}Request $request
+     * @return BaseHttpResponse
+     */
+    public function postEdit($id, {Plugin}Request $request, BaseHttpResponse $response)
+    {
+        ${plugin} = $this->{+plugin}Repository->findOrFail($id);
+
+        ${plugin}->fill($request->input());
+
+        $this->{+plugin}Repository->createOrUpdate(${plugin});
+
+        event(new UpdatedContentEvent({PLUGIN}_MODULE_SCREEN_NAME, $request, ${plugin}));
+
+        return $response
+            ->setPreviousUrl(route('{plugin}.list'))
+            ->setMessage(trans('core/base::notices.update_success_message'));
+    }
+
+    /**
+     * @param $id
+     * @param Request $request
+     * @return BaseHttpResponse
+     */
+    public function getDelete(Request $request, $id, BaseHttpResponse $response)
+    {
+        try {
+            ${plugin} = $this->{+plugin}Repository->findOrFail($id);
+
+            $this->{+plugin}Repository->delete(${plugin});
+
+            event(new DeletedContentEvent({PLUGIN}_MODULE_SCREEN_NAME, $request, ${plugin}));
+
+            return $response->setMessage(trans('core/base::notices.delete_success_message'));
+        } catch (Exception $exception) {
+            return $response
+                ->setError()
+                ->setMessage(trans('core/base::notices.cannot_delete'));
+        }
+    }
+
+    /**
+     * @param Request $request
+     * @param BaseHttpResponse $response
+     * @return BaseHttpResponse
+     * @throws Exception
+     */
+    public function postDeleteMany(Request $request, BaseHttpResponse $response)
+    {
+        $ids = $request->input('ids');
+        if (empty($ids)) {
+            return $response
+                ->setError()
+                ->setMessage(trans('core/base::notices.no_select'));
+        }
+
+        foreach ($ids as $id) {
+            ${plugin} = $this->{+plugin}Repository->findOrFail($id);
+            $this->{+plugin}Repository->delete(${plugin});
+            event(new DeletedContentEvent({PLUGIN}_MODULE_SCREEN_NAME, $request, ${plugin}));
+        }
+
+        return $response->setMessage(trans('core/base::notices.delete_success_message'));
+    }
+}
